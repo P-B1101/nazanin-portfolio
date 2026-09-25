@@ -9,7 +9,7 @@ $Changelog = "CHANGELOG.md"
 $ConfigFile = ".release.json"
 $Branch = "main"
 # Everything that is part of the public site. Nothing else gets uploaded.
-$SiteFiles = @("index.html", "404.html", "_headers", "favicon.svg", "css", "js", "assets")
+$SiteFiles = @("index.html", "404.html", "resume.html", "_headers", "favicon.svg", "css", "js", "assets")
 $Utf8NoBom = New-Object System.Text.UTF8Encoding($false)
 
 # ---------- helpers ----------

@@ -16,9 +16,12 @@ window.PROFILE = {
     "A fast learner with a strong desire to keep expanding her knowledge base."
   ],
   links: {
+    website: "https://nazanin-fereydoonizade.ir",
     email: "nazanin.fereydoonizade@gmail.com",
     github: "https://github.com/nazanin1998",
-    linkedin: "https://www.linkedin.com/in/nazanin-fereydoonizade"
+    linkedin: "https://www.linkedin.com/in/nazanin-fereydoonizade",
+    // Put the PDF at this path; the download buttons point here.
+    resume: "assets/Nazanin-Fereydoonizade-Resume.pdf"
   },
 
   experience: [

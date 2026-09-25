@@ -103,7 +103,7 @@
     },
     education: function () { return P.education; },
     contact: function () {
-      return { email: P.links.email, github: P.links.github, linkedin: P.links.linkedin };
+      return { email: P.links.email, github: P.links.github, linkedin: P.links.linkedin, resume: "/" + P.links.resume };
     },
     health: function () {
       return {
@@ -570,14 +570,16 @@
     var icon = {
       email: '<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v12H3zM3 7l9 6 9-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>',
       github: '<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .5a11.5 11.5 0 00-3.6 22.4c.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 015.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0012 .5z"/></svg>',
+      resume: '<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M5 21h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
       linkedin: '<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 11-.01 5 2.5 2.5 0 01.01-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.1c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V21h-4z"/></svg>'
     };
     $("#contact-links").innerHTML = [
       ["email", "mailto:" + P.links.email, P.links.email],
       ["github", P.links.github, P.links.github.replace("https://", "")],
-      ["linkedin", P.links.linkedin, "linkedin.com/in/" + P.links.linkedin.split("/in/")[1]]
+      ["linkedin", P.links.linkedin, "linkedin.com/in/" + P.links.linkedin.split("/in/")[1]],
+      ["resume", P.links.resume, "download resume (PDF)"]
     ].map(function (l) {
-      var ext = l[0] === "email" ? "" : ' target="_blank" rel="noopener"';
+      var ext = l[0] === "email" ? "" : l[0] === "resume" ? " download" : ' target="_blank" rel="noopener"';
       return '<li><a class="btn" href="' + esc(l[1]) + '"' + ext + ">" + icon[l[0]] + esc(l[2]) + "</a></li>";
     }).join("");
   }
@@ -631,6 +633,15 @@
     skills: { desc: "dependencies and proficiency", run: function () { print(jsonHtml(api.skills())); } },
     education: { desc: "degrees", run: function () { print(jsonHtml(api.education())); } },
     contact: { desc: "how to reach her", run: function () { print(linkify(jsonHtml(api.contact()))); } },
+    resume: {
+      desc: "download her resume (PDF)",
+      run: function () {
+        var a = document.createElement("a");
+        a.href = P.links.resume; a.download = "";
+        document.body.appendChild(a); a.click(); a.remove();
+        print(span("t-ok", "200 OK") + "  downloading " + esc(P.links.resume.split("/").pop()));
+      }
+    },
     health: { desc: "GET /actuator/health", run: function () { print(jsonHtml(api.health())); } },
     curl: {
       args: "<path>", desc: "call the api, e.g. curl /api/v1/whoami",

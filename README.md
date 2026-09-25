@@ -15,9 +15,11 @@ Fonts are self-hosted, so the site makes no third-party requests.
 ```
 index.html      page skeleton
 404.html        custom not-found page
+resume.html     printable resume (same data as the site)
 css/styles.css  all styling (dark and light themes)
 js/data.js      all content: experience, skills, education, links
 js/app.js       rendering, console, saga simulation
+js/resume.js    renders resume.html
 assets/fonts/    self-hosted Inter and JetBrains Mono (SIL OFL 1.1)
 _headers        security and cache headers for Cloudflare Pages
 ```
@@ -25,6 +27,11 @@ _headers        security and cache headers for Cloudflare Pages
 ## Updating content
 
 Everything on the page comes from `js/data.js`. Edit it and push.
+
+The resume comes from the same data. `resume.html` renders it as a printable
+page; to refresh the PDF after changing `js/data.js`, open `/resume.html` in
+Chrome, press Ctrl+P, choose "Save as PDF" (margins: default, background
+graphics: on) and save it over `assets/Nazanin-Fereydoonizade-Resume.pdf`.
 
 ## Run locally
 
