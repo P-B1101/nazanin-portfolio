@@ -4,6 +4,10 @@ All notable changes to this site are listed here. Versions follow
 [Semantic Versioning](https://semver.org): major for redesigns, minor for new
 sections or features, patch for content fixes.
 
+## [1.1.0] - 2026-09-25
+
+- add download cv.
+
 ## [1.0.1] - 2026-09-25
 
 - initial deploy
