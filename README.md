@@ -10,6 +10,7 @@ Swagger docs, there is a live saga/compensation simulation, and a small console
 ## Stack
 
 Plain HTML, CSS and JavaScript. No framework, no build step, no dependencies.
+Fonts are self-hosted, so the site makes no third-party requests.
 
 ```
 index.html      page skeleton
@@ -17,6 +18,7 @@ index.html      page skeleton
 css/styles.css  all styling (dark and light themes)
 js/data.js      all content: experience, skills, education, links
 js/app.js       rendering, console, saga simulation
+assets/fonts/    self-hosted Inter and JetBrains Mono (SIL OFL 1.1)
 _headers        security and cache headers for Cloudflare Pages
 ```
 
