@@ -165,7 +165,7 @@
     boot.addEventListener("click", finish);
 
     log.innerHTML = '<span class="banner">' + esc(BANNER) + "</span>\n" +
-      span("lvl", " :: nazanin :: ") + span("ts", "              (v" + P.yearsOfExperience + ".0.0-RELEASE)") + "\n\n";
+      span("lvl", " :: nazanin :: ") + span("ts", "              (v" + window.SITE_VERSION + ")") + "\n\n";
 
     var lines = bootLines();
     (async function () {
@@ -585,7 +585,7 @@
   // ---------- footer ----------
   function renderFooter() {
     $("#footer-health").innerHTML = span("t-dim", "$ curl -s https://" + esc(HOST) + "/actuator/health") + "\n" +
-      jsonHtml({ status: "UP", owner: P.name, year: new Date().getFullYear() });
+      jsonHtml({ status: "UP", version: window.SITE_VERSION, owner: P.name, year: new Date().getFullYear() });
   }
 
   // ---------- console ----------

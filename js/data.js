@@ -1,5 +1,8 @@
 // Single source of truth for the site. Every section and every console
 // command reads from here, so updating the portfolio means editing this file.
+// Site version. Bump it (and add a CHANGELOG.md entry) on every release.
+window.SITE_VERSION = "1.0.0";
+
 window.PROFILE = {
   name: "Nazanin Fereydoonizade",
   handle: "nazanin",

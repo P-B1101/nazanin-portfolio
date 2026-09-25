@@ -38,3 +38,11 @@ python3 -m http.server 8080
 1. Cloudflare dashboard → Workers & Pages → Create → Pages → Connect to Git → pick this repo.
 2. Framework preset: **None**. Build command: *(leave empty)*. Build output directory: `/`.
 3. Save and deploy, then add the custom domain under **Custom domains**.
+
+## Versioning
+
+The current version lives in `js/data.js` (`SITE_VERSION`) and shows in the
+startup log and the footer. For each release:
+
+1. Bump `SITE_VERSION` and add an entry to `CHANGELOG.md`.
+2. Merge to `main`, then tag it: `git tag -a v1.1.0 -m "v1.1.0" && git push origin v1.1.0`.
