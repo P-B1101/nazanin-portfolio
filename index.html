@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nazanin Fereydoonizade · Software Engineer</title>
+  <meta name="description" content="Nazanin Fereydoonizade is a software engineer with 9+ years building banking, fintech and logistics systems with Spring Boot, microservices, RabbitMQ and EMQX.">
+  <meta name="theme-color" content="#0d1117">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Nazanin Fereydoonizade · Software Engineer">
+  <meta property="og:description" content="9+ years building banking, fintech and logistics backends on the JVM.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/jetbrains-mono-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/styles.css">
+  <script>
+    // Apply the saved theme before first paint to avoid a flash.
+    try { var t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Startup log shown once per visit -->
+  <div id="boot" class="boot" aria-hidden="true" hidden>
+    <pre class="boot__log" id="boot-log"></pre>
+    <button class="boot__skip" type="button" id="boot-skip">press any key to skip</button>
+  </div>
+
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="brand" href="#top" aria-label="Home">
+        <span class="brand__prompt">nazanin</span><span class="brand__at">@</span><span class="brand__host">prod</span><span class="brand__path">:~$</span><span class="cursor" aria-hidden="true"></span>
+      </a>
+      <nav class="nav" aria-label="Sections">
+        <a href="#about"><span class="verb">GET</span>/about</a>
+        <a href="#experience"><span class="verb">GET</span>/experience</a>
+        <a href="#architecture"><span class="verb">GET</span>/architecture</a>
+        <a href="#skills"><span class="verb">GET</span>/skills</a>
+        <a href="#contact"><span class="verb verb--post">POST</span>/contact</a>
+      </nav>
+      <div class="topbar__actions">
+        <span class="health" id="health-pill" title="GET /actuator/health"><span class="health__dot"></span>UP</span>
+        <button class="icon-btn" type="button" id="console-open" aria-label="Open console" title="Open console ( ` )">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 17l6-5-6-5M12 19h8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="icon-btn" type="button" id="theme-toggle" aria-label="Toggle color theme" title="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="status-line"><span class="mono">HTTP/1.1</span> <span class="ok">200 OK</span></p>
+          <h1 class="hero__name" id="hero-name"></h1>
+          <p class="hero__title mono" id="hero-title"></p>
+          <p class="hero__headline" id="hero-headline"></p>
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#experience"><span class="verb">GET</span> /experience</a>
+            <button class="btn" type="button" data-open-console><span class="mono">&gt;_</span> open console</button>
+          </div>
+        </div>
+
+        <div class="window hero__window" aria-label="Example API request and response">
+          <div class="window__bar">
+            <span class="dots"><i></i><i></i><i></i></span>
+            <span class="window__title">bash</span>
+          </div>
+          <pre class="window__body" id="whoami"><code></code></pre>
+        </div>
+      </div>
+
+      <div class="container">
+        <dl class="metrics" id="metrics"></dl>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about" aria-labelledby="about-h">
+      <div class="container">
+        <header class="section__head">
+          <p class="endpoint"><span class="verb">GET</span> /api/v1/about</p>
+          <h2 id="about-h">About</h2>
+        </header>
+        <div class="editor">
+          <div class="editor__tabs" role="tablist" aria-label="Files">
+            <button class="editor__tab is-active" type="button" role="tab" aria-selected="true" data-file="java">Nazanin.java</button>
+            <button class="editor__tab" type="button" role="tab" aria-selected="false" data-file="yml">application.yml</button>
+          </div>
+          <pre class="editor__code" id="about-code"><code></code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section" id="experience" aria-labelledby="exp-h">
+      <div class="container">
+        <header class="section__head">
+          <p class="endpoint"><span class="verb">GET</span> /api/v1/experience</p>
+          <h2 id="exp-h">Experience</h2>
+          <p class="section__lede">Each role is an endpoint. Expand one to see the response.</p>
+        </header>
+        <div class="ops" id="experience-list"></div>
+
+        <h3 class="subhead"><span class="annotation">@Deprecated</span> earlier versions</h3>
+        <ol class="legacy" id="legacy-list"></ol>
+      </div>
+    </section>
+
+    <!-- ARCHITECTURE -->
+    <section class="section" id="architecture" aria-labelledby="arch-h">
+      <div class="container">
+        <header class="section__head">
+          <p class="endpoint"><span class="verb verb--post">POST</span> /api/v1/sagas</p>
+          <h2 id="arch-h">How she builds systems</h2>
+          <p class="section__lede">A simplified sketch of the pattern behind the Supply Chain Finance platform she led at Karafarin Bank: an orchestrator drives a saga across domain services over RabbitMQ, and rolls it back with compensating steps when something fails. Run it.</p>
+        </header>
+
+        <div class="arch">
+          <div class="arch__stage window">
+            <div class="window__bar">
+              <span class="dots"><i></i><i></i><i></i></span>
+              <span class="window__title">scf-orchestrator · saga simulation</span>
+            </div>
+            <svg class="arch__svg" id="arch-svg" viewBox="0 0 720 400" role="img" aria-labelledby="arch-title">
+              <title id="arch-title">Diagram: an orchestrator sends commands through RabbitMQ to three domain services, each with its own datastore.</title>
+            </svg>
+            <div class="arch__controls">
+              <button class="btn btn--primary" type="button" id="saga-run"><span class="verb verb--post">POST</span> run saga</button>
+              <button class="btn" type="button" id="saga-fail"><span class="verb verb--del">POST</span> run with failure</button>
+            </div>
+          </div>
+          <div class="window arch__log">
+            <div class="window__bar">
+              <span class="dots"><i></i><i></i><i></i></span>
+              <span class="window__title">logs</span>
+            </div>
+            <pre class="window__body" id="saga-log" aria-live="polite"></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills" aria-labelledby="skills-h">
+      <div class="container">
+        <header class="section__head">
+          <p class="endpoint"><span class="verb">GET</span> /api/v1/skills</p>
+          <h2 id="skills-h">Dependencies</h2>
+          <p class="section__lede">Resolved from <span class="mono">pom.xml</span>. Bars show proficiency: pre-intermediate, intermediate, advanced.</p>
+        </header>
+        <div class="deps" id="skills-grid"></div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="section" id="education" aria-labelledby="edu-h">
+      <div class="container">
+        <header class="section__head">
+          <p class="endpoint"><span class="verb">GET</span> /api/v1/education</p>
+          <h2 id="edu-h">Education</h2>
+        </header>
+        <div class="edu" id="education-list"></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact" aria-labelledby="contact-h">
+      <div class="container">
+        <header class="section__head">
+          <p class="endpoint"><span class="verb verb--post">POST</span> /api/v1/contact</p>
+          <h2 id="contact-h">Get in touch</h2>
+          <p class="section__lede">Build the request, then send it. It opens your mail client with everything filled in.</p>
+        </header>
+
+        <div class="contact">
+          <form class="window contact__form" id="contact-form" novalidate>
+            <div class="window__bar">
+              <span class="dots"><i></i><i></i><i></i></span>
+              <span class="window__title">request</span>
+            </div>
+            <div class="contact__fields">
+              <label>name<input name="name" autocomplete="name" required placeholder="Jane Doe"></label>
+              <label>company<input name="company" autocomplete="organization" placeholder="optional"></label>
+              <label>message<textarea name="message" rows="4" required placeholder="Hi Nazanin, ..."></textarea></label>
+              <p class="contact__error" id="contact-error" role="alert"></p>
+              <button class="btn btn--primary" type="submit"><span class="verb verb--post">POST</span> send</button>
+            </div>
+          </form>
+          <div class="window contact__preview">
+            <div class="window__bar">
+              <span class="dots"><i></i><i></i><i></i></span>
+              <span class="window__title">request body</span>
+            </div>
+            <pre class="window__body" id="contact-preview"></pre>
+          </div>
+        </div>
+
+        <ul class="links" id="contact-links"></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <pre class="footer__health" id="footer-health"></pre>
+      <p class="footer__note">Press <kbd>`</kbd> anywhere to open the console.</p>
+    </div>
+  </footer>
+
+  <!-- Console drawer -->
+  <div class="console" id="console" role="dialog" aria-modal="true" aria-label="Console" hidden>
+    <div class="console__bar">
+      <span class="dots"><i></i><i></i><i></i></span>
+      <span class="window__title">nazanin@prod: ~ (type <b>help</b>)</span>
+      <button class="icon-btn" type="button" id="console-close" aria-label="Close console">&times;</button>
+    </div>
+    <div class="console__out" id="console-out" aria-live="polite"></div>
+    <form class="console__in" id="console-form" autocomplete="off">
+      <label for="console-input" class="console__prompt">nazanin@prod:~$</label>
+      <input id="console-input" spellcheck="false" autocapitalize="off" autocomplete="off">
+    </form>
+  </div>
+
+  <noscript>
+    <div class="container noscript">
+      <h1>Nazanin Fereydoonizade</h1>
+      <p>Software Engineer with 9+ years of experience. Contact: nazanin.fereydoonizade@gmail.com · github.com/nazanin1998</p>
+    </div>
+  </noscript>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
