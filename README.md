@@ -33,16 +33,29 @@ python3 -m http.server 8080
 # open http://localhost:8080
 ```
 
-## Deploy (Cloudflare Pages)
+## Release and deploy
 
-1. Cloudflare dashboard → Workers & Pages → Create → Pages → Connect to Git → pick this repo.
-2. Framework preset: **None**. Build command: *(leave empty)*. Build output directory: `/`.
-3. Save and deploy, then add the custom domain under **Custom domains**.
+`release.ps1` does the whole release from Windows PowerShell with wrangler:
+pulls `main`, bumps the version in `js/data.js`, adds a `CHANGELOG.md` entry,
+commits, tags `vX.Y.Z`, pushes, and deploys the site files to Cloudflare Pages.
+
+```powershell
+# edit js/data.js (or anything else), then:
+.\release.ps1 -Message "Add photo"                   # patch: 1.0.0 -> 1.0.1
+.\release.ps1 -Bump minor -Message "New section"     # minor: 1.0.1 -> 1.1.0
+.\release.ps1 -Bump major -Message "Redesign"        # major: 1.1.0 -> 2.0.0
+.\release.ps1 -DeployOnly                            # redeploy main as is
+.\release.ps1 -Message "Fix typo" -SkipDeploy        # release without deploying
+```
+
+The Cloudflare Pages project defaults to `nazanin-portfolio`; pass
+`-ProjectName <name>` to use another. The first time, run `wrangler login`.
+If Windows blocks the script, run it with
+`powershell -ExecutionPolicy Bypass -File .\release.ps1 -Message "..."`.
 
 ## Versioning
 
 The current version lives in `js/data.js` (`SITE_VERSION`) and shows in the
-startup log and the footer. For each release:
-
-1. Bump `SITE_VERSION` and add an entry to `CHANGELOG.md`.
-2. Merge to `main`, then tag it: `git tag -a v1.1.0 -m "v1.1.0" && git push origin v1.1.0`.
+startup log and the footer. `release.ps1` bumps it, so there is no need to edit
+it by hand. Patch is for content fixes, minor for new sections or features,
+major for redesigns.
