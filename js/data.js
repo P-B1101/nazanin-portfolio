@@ -3,13 +3,13 @@
 window.PROFILE = {
   name: "Nazanin Fereydoonizade",
   handle: "nazanin",
-  title: "Java Backend Developer",
+  title: "Software Engineer",
   headline: "Software engineer building banking, fintech and logistics backends on the JVM.",
-  yearsOfExperience: 7,
+  yearsOfExperience: 9,
   leadershipYears: 3,
   summary: [
-    "Highly motivated and results-oriented Java developer with 7+ years of experience designing, developing and implementing complex enterprise applications.",
-    "Currently a Java developer at Snappbox. More than 3 years of leadership experience on both backend and frontend, leading productive, friendly teams that are eager to take on time-sensitive projects.",
+    "Highly motivated and results-oriented software engineer with 9+ years of experience designing, developing and implementing complex enterprise applications.",
+    "Currently a software engineer at Snappbox. More than 3 years of leadership experience on both backend and frontend, leading productive, friendly teams that are eager to take on time-sensitive projects.",
     "A fast learner with a strong desire to keep expanding her knowledge base."
   ],
   links: {
@@ -31,6 +31,12 @@ window.PROFILE = {
           points: [
             "Develops new features and maintains existing ones across the Snappbox platform.",
             "Designed and implemented the live location sharing solution using EMQX."
+          ]
+        },
+        {
+          name: "Biker Streaming",
+          points: [
+            "Syncs full biker information, including profile, ban data, bank info and vehicles, from Cap venture to Box venture."
           ]
         },
         {
@@ -56,7 +62,7 @@ window.PROFILE = {
             "Built a framework for a microservice architecture using orchestration and the Saga pattern, with RabbitMQ as the message broker.",
             "Used Hibernate and Spring Data MongoDB, with Oracle as the database and Redis as the cache.",
             "Separated domains to apply domain-driven design across the microservices.",
-            "Worked with Docker, Jenkins, Portainer and CI/CD."
+            "Worked with Docker, Jenkins, Kubernetes and CI/CD."
           ]
         },
         {

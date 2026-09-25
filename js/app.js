@@ -291,7 +291,7 @@
       "  " + key("datastores") + " " + list(["Oracle", "MongoDB", "MySQL", "PostgreSQL", "Redis"]),
       "  " + key("security") + " " + list(["Spring Security", "Keycloak"]),
       "  " + key("observability") + " " + list(["Prometheus", "Grafana", "Spring Boot Admin"]),
-      "  " + key("delivery") + " " + list(["Docker", "Jenkins", "Portainer"])
+      "  " + key("delivery") + " " + list(["Docker", "Jenkins", "Kubernetes"])
     ];
 
     var files = { java: L, yml: Y };

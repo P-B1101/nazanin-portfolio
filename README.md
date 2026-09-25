@@ -1,6 +1,6 @@
 # nazanin-portfolio
 
-Personal site of **Nazanin Fereydoonizade**, Java backend developer.
+Personal site of **Nazanin Fereydoonizade**, software engineer.
 
 The site is designed to feel like a running backend service: it boots with a
 Spring-style startup log, every section is an API endpoint, experience reads like
