@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>404 Not Found · Nazanin Fereydoonizade</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <main class="container nf">
+    <p class="endpoint"><span class="verb">GET</span> <span id="path">/unknown</span></p>
+    <div class="window">
+      <div class="window__bar"><span class="dots"><i></i><i></i><i></i></span><span class="window__title">response</span></div>
+      <pre class="window__body"><span class="t-err">HTTP/1.1 404 Not Found</span>
+Content-Type: application/json
+
+{
+  <span class="t-key">"status"</span>: <span class="t-num">404</span>,
+  <span class="t-key">"error"</span>: <span class="t-str">"Not Found"</span>,
+  <span class="t-key">"message"</span>: <span class="t-str">"No handler found for this route"</span>
+}</pre>
+    </div>
+    <a class="btn btn--primary nf__home" href="/"><span class="verb">GET</span> /</a>
+  </main>
+  <script>document.getElementById("path").textContent = location.pathname;</script>
+</body>
+</html>
