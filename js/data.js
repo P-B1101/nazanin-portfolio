@@ -22,7 +22,7 @@ window.PROFILE = {
     {
       id: "snappbox",
       company: "Snapp Box",
-      role: "Java Application Developer",
+      role: "Software Engineer",
       from: "2024-06",
       to: null,
       projects: [
@@ -84,7 +84,7 @@ window.PROFILE = {
         {
           name: "Digital Banking Application",
           points: [
-            "Designed and implemented a new mobile bank app from scratch for City Bank, with 1M+ active users, using Flutter on multiple platforms."
+            "Designed and implemented a new mobile bank app from scratch for City Bank, with 3M+ active users, using Flutter on multiple platforms."
           ]
         },
         {

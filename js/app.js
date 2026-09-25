@@ -189,7 +189,7 @@
 
     var metrics = [
       ["experience", P.yearsOfExperience + "+", "yrs"],
-      ["users served", "1M+", "mobile bank"],
+      ["users served", "3M+", "mobile bank"],
       ["team leadership", P.leadershipYears + "+", "yrs"],
       ["degrees", "2", "top student"]
     ];
